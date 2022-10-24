@@ -23,7 +23,7 @@ namespace SearchAlgoritm
             while (true)
             {
                 Console.WriteLine("enter the number of element in the array:");
-                string s = Console.ReadLine(); 
+                string s = Console.ReadLine();
                 n = Int32.Parse(s);
                 if ((n > 0) && (n <= 20))
                     break;
@@ -38,7 +38,7 @@ namespace SearchAlgoritm
             Console.WriteLine("--------------------");
             for (i = 0; i < n; i++)
             {
-                Console.Write("<" + (i+1) + ">");
+                Console.Write("<" + (i + 1) + ">");
                 string s1 = Console.ReadLine();
                 arr[i] = Int32.Parse(s1);
 
@@ -59,7 +59,31 @@ namespace SearchAlgoritm
 
                 //obtain the index of the middle elements
                 int mid = (upperbound - lowerbound) / 2;
-            }
+                int ctr = 1;
+
+                //loop to search for the element in the array
+                while ((item! = arr[mid]) && (lowerbound <= upperbound))
+                {
+                    if (item > arr[mid])
+                        lowerbound = mid + 1;
+                    else
+                        upperbound = mid - 1;
+                    mid = (upperbound - lowerbound) / 2;
+                    ctr++;
+                }
+                if (item == arr[mid])
+                    Console.WriteLine("\n" + item.ToString() + "found at position" + (mid + 1).ToString());
+                else
+                    Console.WriteLine("\n" + item.ToString() + "not found in the array\n");
+                Console.WriteLine("\n Number of comparasion :" + ctr);
+
+                Console.Write("\n continue search (y/n):");
+                ch = char.Parse(Console.ReadLine());
+
+            }while ((ch == 'y') || (ch == 'Y'));
         }
+
+        
     }
+
 }
