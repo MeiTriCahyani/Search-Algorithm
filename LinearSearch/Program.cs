@@ -20,6 +20,7 @@ namespace SearchAlgoritm
 
         public void input()
         {
+            //menerima angka untuk menentukan banyaknya data yang disimpan pada array dengan maksimal 20
             while (true)
             {
                 Console.WriteLine("enter the number of element in the array:");
@@ -36,6 +37,8 @@ namespace SearchAlgoritm
             Console.WriteLine("--------------------");
             Console.WriteLine(" Enter array element");
             Console.WriteLine("--------------------");
+            
+            //pengguna memasukkan elemen pada array
             for (i = 0; i < n; i++)
             {
                 Console.Write("<" + (i + 1) + ">");
@@ -113,7 +116,9 @@ namespace SearchAlgoritm
             } while ((ch == 'y') || (ch == 'Y'));
         }
         static void Main(string[] args)
+
         {
+            //membuat pilihan menu
             program mylist = new program();
             int pilihanmenu;
             do
